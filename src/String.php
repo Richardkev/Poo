@@ -12,6 +12,7 @@ namespace Strings;
 class Str
 {
     use camelcase;
+    use snakecase;
     private $strg;
 
     //Méthode magique permettant de transformer l'objet en string.
@@ -62,5 +63,11 @@ class Str
     {
         $method = (string) Str::on($name)->replace('to', '')->lcfirst();
         return (string) Str::on($arguments[0])->{$method}();
+    }
+
+    public function strtolower()
+    {
+        $this->strg = strtolower($this->strg);
+        return $this;
     }
 }
