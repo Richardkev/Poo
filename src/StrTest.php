@@ -72,4 +72,22 @@ class StrTest extends TestCase
         $str = Str::toSnakeCase('My String');
         $this->assertSame('my_string', $str);
     }
+
+    public function testExo4()
+    {
+        $str = Str::toSlugCase('my_string');
+        $this->assertSame('my-string', $str);
+
+        $str = Str::toSlugCase('myString');
+        $this->assertSame('my-string', $str);
+
+        $str = Str::toSlugCase('my-string');
+        $this->assertSame('my-string', $str, -1);
+
+        $str = Str::toSlugCase('my string');
+        $this->assertSame('my-string', $str);
+
+        $str = Str::toSlugCase('My String');
+        $this->assertSame('my-string', $str);
+    }
 }
