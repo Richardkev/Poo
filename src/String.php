@@ -11,6 +11,7 @@ namespace Strings;
 
 class Str
 {
+    use camelcase;
     private $strg;
 
     //Méthode magique permettant de transformer l'objet en string.
@@ -55,5 +56,11 @@ class Str
     {
         $this->strg = lcfirst($this->strg);
         return $this;
+    }
+
+    public static function __callStatic($name, $arguments)
+    {
+        $method = (string) Str::on($name)->replace('to', '')->lcfirst();
+        return (string) Str::on($arguments[0])->{$method}();
     }
 }
