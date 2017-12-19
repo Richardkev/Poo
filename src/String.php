@@ -14,6 +14,7 @@ class Str
     use camelcase;
     use snakecase;
     use slugcase;
+    use kebabcase;
     private $strg;
 
     //Méthode magique permettant de transformer l'objet en string.
