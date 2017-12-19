@@ -16,6 +16,7 @@ class Str
     use slugcase;
     use kebabcase;
     use studlycase;
+    use titlecase;
     private $strg;
 
     //Méthode magique permettant de transformer l'objet en string.
