@@ -3,15 +3,23 @@
 namespace Strings;
 
 
+
+
 trait camelCase
 {
     public function camelCase()
     {
-        return $this
-            ->replace('-', ' ')
-            ->replace('_', ' ')
-            ->ucwords()
-            ->replace(' ', '')
-            ->lcfirst();
+        if (preg_match("/[-,_, ]+/", $this->strg) === 1) {
+            return $this
+                ->strtolower()
+                ->replace('-', ' ')
+                ->replace('_', ' ')
+                ->ucwords()
+                ->replace(' ', '')
+                ->lcfirst();
+        }
+        else {
+            return $this;
+        }
     }
 }
