@@ -1,0 +1,19 @@
+{
+    "name" : "alpha/exo",
+    "authors": [
+        {
+            "name": "Kevin",
+            "email": "richardkevin88@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "6.5",
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Strings\\": "src/"
+        }
+    }
+}
